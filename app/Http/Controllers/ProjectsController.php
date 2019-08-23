@@ -45,7 +45,10 @@ class ProjectsController extends Controller
 
       //  dd('Hello!');//debugging
         //dd(request()->all());
-
+        request()->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
         $project->title = request('title');
         $project->description = request('description');
         $project->save();
@@ -61,12 +64,25 @@ class ProjectsController extends Controller
 
 
     public function store(){
+
+        request()->validate([
+            'title' => ['required','min:3','max:255'],
+            'description' => ['required','min:3','max:255']
+        ]);
         //return request()->all();
         //return request('title');
-        $project = new Project();
-        $project->title = request('title');
-        $project->description = request('description');
-        $project->save();
+//        $project = new Project();
+//        $project->title = request('title');
+//        $project->description = request('description');
+//        $project->save();
+
+
+//        $project->title = request('title');
+//        $project->description = request('description');
+//        $project->save();
+
+        Project::create(request(['title','description']));
+
         return redirect('/projects');
     }
 
