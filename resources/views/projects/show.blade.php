@@ -12,10 +12,23 @@
     </br>
     @if($project->tasks->count())
         <h5>Project task list</h5>
-        <div class="links">
+        <div class="align-content-around">
             @foreach($project->tasks as $task)
 
-                    <li  class="links"><a href="#" >{{ $task->description }}</a></li>
+                    <div>
+                        <form method="POST" action="/tasks/{{ $task->id }}">
+                            @method('PATCH')
+                            @csrf
+                            <label class="custom-checkbox" for="completed">
+                                <input type="checkbox" name="completed" onchange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
+                                {{ $task->description."     ".$task->created_at}}
+
+                            </label>
+
+
+
+                        </form>
+                    </div>
 
             @endforeach
         </div>
