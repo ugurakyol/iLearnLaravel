@@ -49,9 +49,11 @@ class ProjectsController extends Controller
             'title' => 'required',
             'description' => 'required'
         ]);
-        $project->title = request('title');
-        $project->description = request('description');
-        $project->save();
+//        $project->title = request('title');
+//        $project->description = request('description');
+//        $project->save();
+
+        Project::create(request(['title','description']));
         return redirect('/projects');
     }
 
@@ -69,17 +71,20 @@ class ProjectsController extends Controller
             'title' => ['required','min:3','max:255'],
             'description' => ['required','min:3','max:255']
         ]);
+
         //return request()->all();
         //return request('title');
+//        dd(request(['title','description']));
+//        dd([
+//            'title' => request(''),
+//            'description' => request('description')
+//        ]);
+
 //        $project = new Project();
 //        $project->title = request('title');
 //        $project->description = request('description');
 //        $project->save();
 
-
-//        $project->title = request('title');
-//        $project->description = request('description');
-//        $project->save();
 
         Project::create(request(['title','description']));
 
