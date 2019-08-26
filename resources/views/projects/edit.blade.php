@@ -33,24 +33,27 @@
     </div>
 
 </form>
-<form method="POST" action="/projects/{{$project->id}}">
-    {{ method_field('DELETE') }}
-    {{ csrf_field() }}
     <div class="field">
-        <div class="control">
-            <button type="submit" class="button is-link" style="background-color: #c51f1a; color: #cce3f6" > Delete Project </button>
-        </div>
-    </div>
-    @if ($errors->any())
-        <div class="alert-danger">
-            <div class="link">
-                @foreach($errors->all() as $error)
-                    <font color="red"><li>{{ $error }}</li></font>
-                @endforeach
+        <form method="POST" action="/projects/{{$project->id}}">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+            <div class="field">
+                <div class="control">
+                    <button type="submit" class="button is-link" style="background-color: #c51f1a; color: #cce3f6" > Delete Project </button>
+                </div>
             </div>
-        </div>
-    @endif
-</form>
+            @if ($errors->any())
+                <div class="alert-danger">
+                    <div class="link">
+                        @foreach($errors->all() as $error)
+                            <font color="red"><li>{{ $error }}</li></font>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
+        </form>
+    </div>
+
 </div>
 
 @endsection
