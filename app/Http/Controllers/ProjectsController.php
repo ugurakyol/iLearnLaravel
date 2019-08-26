@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Project;
+use App\Task;
 use http\Env\Request;
 
 class ProjectsController extends Controller
@@ -49,11 +50,11 @@ class ProjectsController extends Controller
             'title' => 'required',
             'description' => 'required'
         ]);
-//        $project->title = request('title');
-//        $project->description = request('description');
-//        $project->save();
+        $project->title = request('title');
+        $project->description = request('description');
+        $project->save();
 
-        Project::create(request(['title','description']));
+        //Project::update(request(['title','description']));
         return redirect('/projects');
     }
 
@@ -61,6 +62,8 @@ class ProjectsController extends Controller
 
      //   dd('Hello! ' . $id  );
         $project->delete();
+        Task::where('project_id',$project->id)->delete();
+
         return redirect('/projects');
     }
 

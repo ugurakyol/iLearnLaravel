@@ -20,11 +20,11 @@ class Project extends Model
 
     }
 
-    public function addTask($description){
+    public function addTask($task){
 
        // dd($description);
 
-        $this->tasks()->create(compact('description'));
+        $this->tasks()->create($task);
 
     }
 }

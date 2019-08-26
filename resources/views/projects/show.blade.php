@@ -36,10 +36,12 @@
 
     <form method="POST" action="/projects/{{ $project->id }}/tasks"  class="box">
         @csrf
+        {{ csrf_field() }}
+
         <div class="field">
             <label class="label" for="description"> New Tasks</label>
             <div>
-                <input type="text" class="input" name="description" placeholder="">
+                <input class="input {{ $errors->has('description') ? 'is-danger' : '' }}" name="description" placeholder="" >
             </div>
         </div>
         <div class="field">
@@ -48,7 +50,10 @@
             </div>
         </div>
 
+        @include('errors')
+
     </form>
+
 
 
 
