@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adb10d7c-55b0-46c0-a432-7595074f9d88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Example.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Foo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Twitter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -158,7 +155,7 @@
       <workItem from="1566537821902" duration="391000" />
       <workItem from="1566540859898" duration="28302000" />
       <workItem from="1566809813790" duration="937000" />
-      <workItem from="1566810862936" duration="7973000" />
+      <workItem from="1566810862936" duration="8474000" />
     </task>
     <task id="LOCAL-00001" summary="Some thing else">
       <created>1566549358548</created>
@@ -223,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566886998923</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Core consepts: Service Container and Auto-Resolution is added">
+      <created>1566893072348</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1566893072348</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +249,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Some thing else" />
     <MESSAGE value="destroy task functionality is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="destroy task functionality is added" />
+    <MESSAGE value="Core consepts: Service Container and Auto-Resolution is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Core consepts: Service Container and Auto-Resolution is added" />
   </component>
 </project>

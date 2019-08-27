@@ -17,10 +17,15 @@
 //
 //});
 
-app()->singleton('twitter', function(){
+app()->singleton('App\Services\Twitter', function(){
 
         return new \App\Services\Twitter('dfgdfgdfg');
 });
+
+//app()->singleton('twitter', function(){
+//
+//        return new \App\Services\Twitter('dfgdfgdfg');
+//});
 
 
 
