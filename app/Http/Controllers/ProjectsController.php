@@ -31,11 +31,20 @@ class ProjectsController extends Controller
 //
 //    }
 
+//    public function show(Project $project){
+//
+//        return view('projects.show',compact('project'));
+//
+//    }
     public function show(Project $project){
 
-        return view('projects.show',compact('project'));
+        $twitter = app('twitter');
+        dd($twitter);
+
+       // return view('projects.show',compact('project'));
 
     }
+
 
     public function edit(Project $project){
 

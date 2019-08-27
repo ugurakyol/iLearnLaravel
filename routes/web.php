@@ -11,7 +11,27 @@
 |
 */
 
-Route::get('/','PagesController@home');
+//app()->singleton('example', function(){
+//
+//    return new \App\Example;
+//
+//});
+
+app()->singleton('twitter', function(){
+
+        return new \App\Services\Twitter('dfgdfgdfg');
+});
+
+
+
+Route::get('/', function (){
+
+    //dd(app('example'),app('example'));
+    dd(app('App\Example'));
+
+});
+
+//Route::get('/','PagesController@home');
 Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 
