@@ -22,6 +22,7 @@
                             <label class="custom-checkbox" for="completed">
                                 <input type="checkbox" name="completed" onchange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
                                 {{ $task->description."     ".$task->created_at}}
+                                <a href="/tasks/{{ $task->id }}/remove" >Click to Delete Task</a>
 
                             </label>
 
