@@ -17,10 +17,6 @@
 //
 //});
 
-app()->singleton('App\Services\Twitter', function(){
-
-        return new \App\Services\Twitter('dfgdfgdfg');
-});
 
 //app()->singleton('twitter', function(){
 //
@@ -28,15 +24,25 @@ app()->singleton('App\Services\Twitter', function(){
 //});
 
 
+//
+//Route::get('/', function (){
+//
+//    //dd(app('example'),app('example'));
+//    dd(app('App\Example'));
+//
+//});
 
-Route::get('/', function (){
+use App\Repositories\UserRepository;
+use App\Services\Twitter;
 
-    //dd(app('example'),app('example'));
-    dd(app('App\Example'));
+//Route::get('/', function (Twitter $users){
+//
+//
+//    dd($users);
+//
+//});
 
-});
-
-//Route::get('/','PagesController@home');
+Route::get('/','PagesController@home');
 Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 
@@ -58,7 +64,9 @@ Route::get('/contact','PagesController@contact');
         DELETE /projects/1 (destory)
 
  */
-Route::resource('projects','ProjectsController');
+
+Route::resource('/projects','ProjectsController')->middleware('can:update,project');
+//Route::resource('projects','ProjectsController');
 
 Route::post('/projects/{project}/tasks','ProjectTasksController@store');
 Route::patch('/tasks/{task}','ProjectTasksController@update');
@@ -100,3 +108,8 @@ Route::get('tasks/{task}/remove','ProjectTasksController@remove');
 //Route::get('contact', function () {
 //    return view('contact');
 //});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'PagesController@home');

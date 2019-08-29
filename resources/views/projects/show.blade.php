@@ -5,6 +5,11 @@
 @section('content')
 
     <h1>{{ $project->title }}</h1>
+{{--    this is for authentication --}}
+{{--    @can('update',$project)--}}
+{{--        <a href="">Update</a>--}}
+{{--    @endcan--}}
+
     <div class="align-content-center" style="font-size: larger">{{ $project->description }}</div>
     <div class="links" >
         <a href="/projects/{{ $project->id }}/edit" >Click to Edit Project</a>

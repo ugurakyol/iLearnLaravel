@@ -7,13 +7,31 @@ use App\Project;
 use App\Services\Twitter;
 use App\Task;
 use http\Env\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectsController extends Controller
 {
-    public function index(){
 
-        $projects =Project::all();
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
+    public function index( ){
+
+        //$projects =Project::all();
+
+       // auth()->user()->can('view',$project);
+
+        if (auth()->id() == 1){
+
+            $projects =Project::all();
+
+        }else{
+
+            $projects = Project::where('owner_id' , auth()->id())->get(); //select * from projects where owner_id = 4
+
+        }
 
         return view('projects.index' , compact('projects'));
 
@@ -38,12 +56,25 @@ class ProjectsController extends Controller
 //
 //    }
 
-    public function show(Project $project, Twitter $twitter){
-
+   // public function show(Project $project, Twitter $twitter){
+    public function show(Project $project){
        // $twitter = app('twitter');
-        dd($twitter);
+      //  dd($twitter);
 
-       // return view('projects.show',compact('project'));
+
+//        if($project->owner_id != auth()->id()){
+//            abort(403);
+//        }
+       // abort_if($project->owner_id !== auth()->id(),403);
+        //abort_unless(auth()->user()->owns($project),403);
+//
+//        if(\Gate::denies('view',$project)){
+//            abort(403);
+//        }
+        //auth()->user()->cannot('view', $project);
+      //  $this->authorize('view',$project);
+
+        return view('projects.show',compact('project'));
 
     }
 
@@ -54,6 +85,7 @@ class ProjectsController extends Controller
     }
 
     public function update(Project $project){
+       // $this->authorize('view',$project);
 
       //  dd('Hello!');//debugging
         //dd(request()->all());
@@ -71,6 +103,8 @@ class ProjectsController extends Controller
 
     public function destroy(Project $project){
 
+        //$this->authorize('view',$project);
+
      //   dd('Hello! ' . $id  );
         $project->delete();
         Task::where('project_id',$project->id)->delete();
@@ -81,7 +115,7 @@ class ProjectsController extends Controller
 
     public function store(){
 
-        request()->validate([
+        $attributes = request()->validate([
             'title' => ['required','min:3','max:255'],
             'description' => ['required','min:3','max:255']
         ]);
@@ -100,7 +134,8 @@ class ProjectsController extends Controller
 //        $project->save();
 
 
-        Project::create(request(['title','description']));
+        //Project::create(request(['title','description']));
+        Project::create($attributes + ['owner_id' => auth()->id()]);
 
         return redirect('/projects');
     }

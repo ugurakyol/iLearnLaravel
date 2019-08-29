@@ -9,7 +9,9 @@ class Project extends Model
     //protected $guarded =[]; this is not secure because you
     /// or
     protected $fillable = [
-        'title','description'
+        'owner_id',
+        'title',
+        'description'
 ];
 
     protected $guarded = [];
@@ -27,4 +29,6 @@ class Project extends Model
         $this->tasks()->create($task);
 
     }
+
+
 }
