@@ -21,7 +21,7 @@ class ProjectsController extends Controller
 
         //$projects =Project::all();
 
-       // auth()->user()->can('view',$project);
+
 
         if (auth()->id() == 1){
 
@@ -58,6 +58,7 @@ class ProjectsController extends Controller
 
    // public function show(Project $project, Twitter $twitter){
     public function show(Project $project){
+
        // $twitter = app('twitter');
       //  dd($twitter);
 

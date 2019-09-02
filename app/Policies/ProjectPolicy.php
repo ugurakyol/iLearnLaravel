@@ -10,6 +10,8 @@ class ProjectPolicy
 {
     use HandlesAuthorization;
 
+
+
     /**
      * Determine whether the user can view any projects.
      *
@@ -55,6 +57,7 @@ class ProjectPolicy
      */
     public function update(User $user, Project $project)
     {
+
 
 
         return $project->owner_id == $user->id;

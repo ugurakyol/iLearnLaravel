@@ -15,7 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
-        // 'App\Project' => 'App\Policies\ProjectPolicy',
+         'App\Project' => 'App\Policies\ProjectPolicy',
     ];
 
     /**
@@ -26,11 +26,17 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(Gate $gate)
     {
+
+//        $gate->before(function ($user){
+//            return $user->id == 1; //This is admin id that used for admin authentication
+//        });
+
+
        $this->registerPolicies();
 
-        $gate->before(function ($user){
-            return $user->id == 1; //This is admin id that used for admin authentication
-        });
+
+
+
 
 
     }
