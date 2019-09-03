@@ -33,7 +33,7 @@ class ProjectPolicy
     public function view(User $user, Project $project)
     {
 
-        return $project->owner_id == $user->id;
+        //
 
     }
 
@@ -43,7 +43,7 @@ class ProjectPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user)
+    public function create(User $user, Project $project)
     {
         //
     }
@@ -72,7 +72,7 @@ class ProjectPolicy
      */
     public function delete(User $user, Project $project)
     {
-        //
+        return $project->owner_id == $user->id;
     }
 
     /**
@@ -84,7 +84,7 @@ class ProjectPolicy
      */
     public function restore(User $user, Project $project)
     {
-        //
+        return $project->owner_id == $user->id;
     }
 
     /**
@@ -96,6 +96,6 @@ class ProjectPolicy
      */
     public function forceDelete(User $user, Project $project)
     {
-        //
+        return $project->owner_id == $user->id;
     }
 }

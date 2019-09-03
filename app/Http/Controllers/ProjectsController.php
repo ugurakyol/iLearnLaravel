@@ -17,30 +17,32 @@ class ProjectsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index( ){
+    public function index()
+    {
 
         //$projects =Project::all();
 
 
+        if (auth()->id() == 1) {
 
-        if (auth()->id() == 1){
+            $projects = Project::all();
 
-            $projects =Project::all();
+        } else {
 
-        }else{
-
-            $projects = Project::where('owner_id' , auth()->id())->get(); //select * from projects where owner_id = 4
+            $projects = Project::where('owner_id', auth()->id())->get(); //select * from projects where owner_id = 4
 
         }
 
-        return view('projects.index' , compact('projects'));
+        return view('projects.index', compact('projects'));
 
 
     }
 
-    public function create(){
+    public function create()
+    {
 
         return view('projects.create');
+
     }
 
 //    public function show($id){
@@ -56,39 +58,42 @@ class ProjectsController extends Controller
 //
 //    }
 
-   // public function show(Project $project, Twitter $twitter){
-    public function show(Project $project){
+    // public function show(Project $project, Twitter $twitter){
+    public function show(Project $project)
+    {
 
-       // $twitter = app('twitter');
-      //  dd($twitter);
+        // $twitter = app('twitter');
+        //  dd($twitter);
 
 
 //        if($project->owner_id != auth()->id()){
 //            abort(403);
 //        }
-       // abort_if($project->owner_id !== auth()->id(),403);
+        // abort_if($project->owner_id !== auth()->id(),403);
         //abort_unless(auth()->user()->owns($project),403);
 //
 //        if(\Gate::denies('view',$project)){
 //            abort(403);
 //        }
         //auth()->user()->cannot('view', $project);
-      //  $this->authorize('view',$project);
+        //  $this->authorize('view',$project);
 
-        return view('projects.show',compact('project'));
+        return view('projects.show', compact('project'));
 
     }
 
 
-    public function edit(Project $project){
+    public function edit(Project $project)
+    {
 
-        return view('projects.edit',compact('project'));
+        return view('projects.edit', compact('project'));
     }
 
-    public function update(Project $project){
-       // $this->authorize('view',$project);
+    public function update(Project $project)
+    {
+        // $this->authorize('view',$project);
 
-      //  dd('Hello!');//debugging
+        //  dd('Hello!');//debugging
         //dd(request()->all());
         request()->validate([
             'title' => 'required',
@@ -102,23 +107,27 @@ class ProjectsController extends Controller
         return redirect('/projects');
     }
 
-    public function destroy(Project $project){
+    public function destroy(Project $project)
+    {
 
         //$this->authorize('view',$project);
 
-     //   dd('Hello! ' . $id  );
+        //   dd('Hello! ' . $id  );
         $project->delete();
-        Task::where('project_id',$project->id)->delete();
+        Task::where('project_id', $project->id)->delete();
 
         return redirect('/projects');
     }
 
 
-    public function store(){
+    public function store()
+    {
+
+      //  dd(request()->all());
 
         $attributes = request()->validate([
-            'title' => ['required','min:3','max:255'],
-            'description' => ['required','min:3','max:255']
+            'title' => ['required', 'min:3', 'max:255'],
+            'description' => ['required', 'min:3', 'max:255']
         ]);
 
         //return request()->all();
@@ -140,7 +149,6 @@ class ProjectsController extends Controller
 
         return redirect('/projects');
     }
-
 
 
 }

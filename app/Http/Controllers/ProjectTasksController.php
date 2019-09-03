@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ProjectTasksController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function update(Task $task){
 
        // dd(request()->all());
