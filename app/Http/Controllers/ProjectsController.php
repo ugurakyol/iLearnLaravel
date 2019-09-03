@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Mail\ProjectCreated;
 use App\Project;
 use App\Services\Twitter;
 use App\Task;
@@ -32,6 +32,15 @@ class ProjectsController extends Controller
             $projects = Project::where('owner_id', auth()->id())->get(); //select * from projects where owner_id = 4
 
         }
+
+//        cache()->rememberForever('stats' ,function (){
+//
+//            return ['lessons' => 1300, 'hours' => 5000, 'series' => 100];
+//        });
+
+//        $stats = cache()->get('stats');
+//        dump($stats);
+//        dd($stats);
 
         return view('projects.index', compact('projects'));
 
@@ -127,7 +136,7 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => ['required', 'min:3', 'max:255'],
-            'description' => ['required', 'min:3', 'max:255']
+            'description' => ['required', 'min:3']
         ]);
 
         //return request()->all();
@@ -145,7 +154,12 @@ class ProjectsController extends Controller
 
 
         //Project::create(request(['title','description']));
-        Project::create($attributes + ['owner_id' => auth()->id()]);
+        $project = Project::create($attributes + ['owner_id' => auth()->id()]);
+
+        \Mail::to('uakyol@ciu.edu.tr')->send(
+
+            new ProjectCreated($project)
+        );
 
         return redirect('/projects');
     }
