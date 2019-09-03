@@ -156,7 +156,8 @@ class ProjectsController extends Controller
         //Project::create(request(['title','description']));
         $project = Project::create($attributes + ['owner_id' => auth()->id()]);
 
-        \Mail::to('uakyol@ciu.edu.tr')->send(
+        \Mail::to('uakyol@ciu.edu.tr')
+            ->send(
 
             new ProjectCreated($project)
         );
