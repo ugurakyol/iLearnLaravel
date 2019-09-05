@@ -5,7 +5,7 @@
 
         @foreach($projects as $project)
             <div class="links">
-                <a href="/projects/{{ $project->id }}" >{{ $project->title }}</a>
+                <a href="{{url("/projects/$project->id") }}" >{{ $project->title }}</a>
             </div>
         @endforeach
 

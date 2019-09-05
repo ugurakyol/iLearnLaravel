@@ -5,7 +5,7 @@
 <h1>Edit a Projects</h1>
 
 <div class="field">
-<form method="POST" action="/projects/{{ $project->id }}">
+<form method="POST" action="{{url("/projects/$project->id") }}">
 {{--    {{ method_field('PATCH') }}--}}
 {{--    {{ csrf_field() }}--}}
 
@@ -34,7 +34,7 @@
 
 </form>
     <div class="field">
-        <form method="POST" action="/projects/{{$project->id}}">
+        <form method="POST" action="{{url("/projects/$project->id")}}">
             {{ method_field('DELETE') }}
             {{ csrf_field() }}
             <div class="field">

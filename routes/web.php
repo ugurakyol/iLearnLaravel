@@ -42,8 +42,15 @@ use App\Services\Twitter;
 //
 //});
 
+
 Route::get('/','PagesController@home');
 Route::get('/about','PagesController@about');
+//Route::get('/about', function () {
+//    return view('about');
+//});
+
+
+
 Route::get('/contact','PagesController@contact');
 
 /*

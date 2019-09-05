@@ -4,7 +4,7 @@
 
     <h1>Create a New Projects</h1>
 
-    <form method="POST" action="/projects">
+    <form method="POST" action="{{url('/projects')}}">
 
         {{ csrf_field() }}
         <div class="field">

@@ -83,17 +83,17 @@
     @endif
 
     <div class="content">
-        <div><img src="/images/logo.png" width="200" height="200" alt=""></div>
+        <div><img src="{{ url('images/logo.png') }}" width="200" height="200" alt=""></div>
         <div class="title m-b-md">
             Uğur AKYOL
         </div>
 
         <div class="links">
-            <a href="/">Home</a>
-            <a href="/about">About Us</a>
-            <a href="/projects">Projects</a>
-            <a href="/projects/create">Create a New Project</a>
-            <a href="/contact">Contact</a>
+            <a href="{{url('/')}}">Home</a>
+            <a href="{{url('about')}}">About Us</a>
+            <a href="{{url('projects')}}">Projects</a>
+            <a href="{{url('projects/create')}}">Create a New Project</a>
+            <a href="{{url('contact')}}">Contact</a>
         </div>
         @yield('content')
     </div>

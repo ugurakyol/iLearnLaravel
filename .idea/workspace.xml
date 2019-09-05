@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adb10d7c-55b0-46c0-a432-7595074f9d88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Mail/ProjectCreated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mail/project-created.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/ProjectCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ProjectCreated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/ProjectPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ProjectPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mail/project-created.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail/project-created.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/projects/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/projects/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/projects/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/projects/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/projects/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +37,11 @@
     <favorites_list name="akyol" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="c007b553119a1cea6ef45cb46aee3604cc4a257e" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -120,7 +139,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../auth-example" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ciumobile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
@@ -163,7 +182,13 @@
       <workItem from="1566540859898" duration="28302000" />
       <workItem from="1566809813790" duration="937000" />
       <workItem from="1566810862936" duration="9767000" />
-      <workItem from="1566908173990" duration="51824000" />
+      <workItem from="1566908173990" duration="28374000" />
+      <workItem from="1567591481041" duration="2775000" />
+      <workItem from="1567600300267" duration="731000" />
+      <workItem from="1567601768157" duration="2101000" />
+      <workItem from="1567671262385" duration="540000" />
+      <workItem from="1567676522104" duration="76000" />
+      <workItem from="1567677103955" duration="4296000" />
     </task>
     <task id="LOCAL-00001" summary="Some thing else">
       <created>1566549358548</created>
@@ -242,42 +267,7 @@
       <option name="project" value="LOCAL" />
       <updated>1566893523873</updated>
     </task>
-    <task id="LOCAL-00012" summary="Authentication">
-      <created>1567086745876</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1567086745876</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Authentication for other user">
-      <created>1567422989567</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1567422989567</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Authentication for other user">
-      <created>1567503850700</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1567503850700</updated>
-    </task>
-    <task id="LOCAL-00015" summary="installation telescope is complated #1">
-      <created>1567504640600</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1567504640600</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fixes #1 .">
-      <created>1567504714805</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1567504714805</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,10 +291,6 @@
     <MESSAGE value="Some thing else" />
     <MESSAGE value="destroy task functionality is added" />
     <MESSAGE value="Core consepts: Service Container and Auto-Resolution is added" />
-    <MESSAGE value="Authentication" />
-    <MESSAGE value="Authentication for other user" />
-    <MESSAGE value="installation telescope is complated #1" />
-    <MESSAGE value="fixes #1 ." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes #1 ." />
+    <option name="LAST_COMMIT_MESSAGE" value="Core consepts: Service Container and Auto-Resolution is added" />
   </component>
 </project>
