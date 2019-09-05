@@ -12,7 +12,7 @@
 
     <div class="align-content-center" style="font-size: larger">{{ $project->description }}</div>
     <div class="links" >
-        <a href="/projects/{{ $project->id }}/edit" >Click to Edit Project</a>
+        <a href="{{url("/projects/$project->id")}}/edit" >Click to Edit Project</a>
     </div>
     </br>
     @if($project->tasks->count())
@@ -21,13 +21,13 @@
             @foreach($project->tasks as $task)
 
                     <div>
-                        <form method="POST" action="/tasks/{{ $task->id }}">
+                        <form method="POST" action="{{url("/tasks/$task->id") }}">
                             @method('PATCH')
                             @csrf
                             <label class="custom-checkbox" for="completed">
                                 <input type="checkbox" name="completed" onchange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
                                 {{ $task->description."     ".$task->created_at}}
-                                <a href="/tasks/{{ $task->id }}/remove" >Click to Delete Task</a>
+                                <a href="{{url("/tasks/$task->id/remove")}}" >Click to Delete Task</a>
 
                             </label>
 
@@ -40,7 +40,7 @@
         </div>
     @endif
 
-    <form method="POST" action="/projects/{{ $project->id }}/tasks"  class="box">
+    <form method="POST" action="{{url("/projects/$project->id/tasks")}}"  class="box">
         @csrf
         {{ csrf_field() }}
 
